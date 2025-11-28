@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { useEffect, useState, useRef, memo } from "react";
 
 interface NavItem {
@@ -122,9 +121,6 @@ export const NavBar = memo(function NavBar({ items, className }: NavBarProps) {
               </Link>
             );
           })}
-        </div>
-        <div className="flex-shrink-0">
-          <ThemeToggle className="scale-75 sm:scale-100" />
         </div>
       </div>
     </nav>

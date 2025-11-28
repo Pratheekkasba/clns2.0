@@ -38,7 +38,6 @@ export default function AboutSection() {
           </svg>
         </div>
 
-        <p className="text-xs font-semibold uppercase tracking-[0.45em] text-[#18a3b5]">About CLNS</p>
 
         <div className="mt-4 space-y-6">
           <h2 className="text-3xl font-bold text-gray-900 md:text-5xl" style={{ textShadow: "0 2px 12px rgba(0,0,0,0.15)" }}>
@@ -48,20 +47,15 @@ export default function AboutSection() {
               staggerFrom="first"
               transition={{ type: "spring", stiffness: 220, damping: 30 }}
             >
-              India's Centralised Legal Network Solutions
+              Centralised Legal Network Solutions
             </VerticalCutReveal>
           </h2>
 
           <div className="space-y-5 text-lg leading-relaxed text-gray-700">
             <p>
-              CLNS is India’s first complete legal-tech ecosystem built to simplify and modernize how the
+              CLNS is the first complete legal-tech ecosystem built to simplify and modernize how the
               nation accesses justice. It connects clients, law students, and advocates through a unified
-              digital platform—making legal help fast, transparent, and accessible to everyone.
-            </p>
-            <p>
-              From ₹1 legal consultations to internship tracking and advocate case management, CLNS bridges
-              technology with legal expertise, creating a system that empowers citizens and professionals
-              alike.
+              digital platform making legal help fast, transparent, and accessible to everyone.
             </p>
           </div>
         </div>

@@ -1,13 +1,37 @@
 "use client";
 
-import AboutSection from "@/components/ui/about-section";
-import { MarqueePartners } from "@/components/ui/marquee-partners";
+import dynamic from "next/dynamic";
+import Image from "next/image";
 import { VideoHero } from "@/components/ui/video-hero";
-import { FullscreenSolutionSection } from "@/components/ui/fullscreen-solution-section";
-import { TestimonialsSection } from "@/components/ui/testimonials-with-marquee";
-import { HandWrittenTitle } from "@/components/ui/hand-writing-text";
-import { Footerdemo } from "@/components/ui/footer-section";
-import { CTAContactSection } from "@/components/ui/cta-contact-section";
+
+// Lazy load below-the-fold components
+const ServiceCategoriesSection = dynamic(
+  () => import("@/components/ui/service-categories-section").then((mod) => ({ default: mod.ServiceCategoriesSection })),
+  { loading: () => <div className="min-h-[600px] bg-[#030914]" /> }
+);
+const AboutSection = dynamic(() => import("@/components/ui/about-section"), {
+  loading: () => <div className="min-h-[400px] bg-[#030914]" />,
+});
+const MarqueePartners = dynamic(
+  () => import("@/components/ui/marquee-partners").then((mod) => ({ default: mod.MarqueePartners })),
+  { loading: () => <div className="min-h-[200px] bg-[#030914]" /> }
+);
+const TestimonialsSection = dynamic(
+  () => import("@/components/ui/testimonials-with-marquee").then((mod) => ({ default: mod.TestimonialsSection })),
+  { loading: () => <div className="min-h-[300px] bg-[#030914]" /> }
+);
+const HandWrittenTitle = dynamic(
+  () => import("@/components/ui/hand-writing-text").then((mod) => ({ default: mod.HandWrittenTitle })),
+  { ssr: false }
+);
+const Footerdemo = dynamic(
+  () => import("@/components/ui/footer-section").then((mod) => ({ default: mod.Footerdemo })),
+  { loading: () => <div className="min-h-[200px] bg-[#030914]" /> }
+);
+const CTAContactSection = dynamic(
+  () => import("@/components/ui/cta-contact-section").then((mod) => ({ default: mod.CTAContactSection })),
+  { loading: () => <div className="min-h-[200px] bg-[#030914]" /> }
+);
 
 export default function Home() {
   const marqueeTestimonials = [
@@ -49,11 +73,10 @@ export default function Home() {
   return (
     <main className="relative min-h-screen bg-[#030914] text-white">
       <VideoHero />
-      <FullscreenSolutionSection />
+      <ServiceCategoriesSection />
       <AboutSection />
       <section id="partners" className="w-full bg-[#030914] py-32">
         <div className="mx-auto flex max-w-5xl flex-col items-center px-6 text-center text-white">
-          <p className="text-sm uppercase tracking-[0.3em] text-gray-400">Partners</p>
           <h2 className="mt-4 text-3xl font-semibold md:text-4xl">Trusted by these institutions</h2>
         </div>
         <div className="mt-12 px-6">
@@ -80,7 +103,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="flex w-full max-w-xs items-center gap-3 rounded-3xl border border-white/20 bg-white/5 px-5 py-4 text-left shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur transition hover:border-white/40 sm:w-auto"
             >
-              <img src="/play-store.jpg" alt="Google Play" className="h-8 w-8 object-contain" />
+              <Image src="/play-store.jpg" alt="Google Play" width={32} height={32} className="h-8 w-8 object-contain" loading="lazy" />
               <div className="flex flex-col">
                 <span className="text-xs uppercase tracking-[0.3em] text-white/60">Get it on</span>
                 <span className="text-lg font-semibold text-white">Google Play</span>
@@ -92,7 +115,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="flex w-full max-w-xs items-center gap-3 rounded-3xl border border-white/20 bg-white/5 px-5 py-4 text-left shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur transition hover:border-white/40 sm:w-auto"
             >
-              <img src="/app-store.jpg" alt="App Store" className="h-8 w-8 object-contain" />
+              <Image src="/app-store.jpg" alt="App Store" width={32} height={32} className="h-8 w-8 object-contain" loading="lazy" />
               <div className="flex flex-col">
                 <span className="text-xs uppercase tracking-[0.3em] text-white/60">Download on the</span>
                 <span className="text-lg font-semibold text-white">App Store</span>
@@ -110,4 +133,3 @@ export default function Home() {
     </main>
   );
 }
-

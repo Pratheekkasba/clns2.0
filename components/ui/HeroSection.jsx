@@ -104,7 +104,7 @@ export default function HeroSection() {
 
           <div className="space-y-6">
             <h1 className="text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
-              India's Centralised Legal Network Solutions
+              Centralised Legal Network Solutions
             </h1>
             <h2 className="text-lg font-medium text-white/85 sm:text-xl lg:text-2xl">
               Transforming legal services with accessibility, transparency & technology.
@@ -113,7 +113,7 @@ export default function HeroSection() {
 
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <button className="rounded-full bg-white/90 px-6 py-3 text-base font-semibold text-[#003f73] shadow-[0_0_25px_rgba(255,255,255,0.35)] transition duration-300 hover:bg-white hover:shadow-[0_0_35px_rgba(0,191,255,0.45)]">
-              Book Consultation — Starts at ₹1
+              Book Consultation Starts at ₹1
             </button>
             <button className="rounded-full border border-white/30 px-6 py-3 text-base font-semibold text-white backdrop-blur hover:border-white hover:bg-white/10">
               For Students

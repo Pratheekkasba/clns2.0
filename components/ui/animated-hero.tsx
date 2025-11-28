@@ -28,29 +28,19 @@ function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20 lg:py-0">
           {/* Left Column - Text Content */}
           <div className="flex flex-col gap-8 z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="space-y-6"
-            >
+            <div className="hero-text-content space-y-6">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight tracking-tight">
                 Trusted Legal Solutions for a{" "}
-                <span className="text-[#2D6CF6]">Modern India</span>
+                <span className="text-[#2D6CF6]">Modern Era</span>
               </h1>
 
               <p className="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl">
                 Expert guidance. Verified advocates. Transparent pricing. CLNS brings legal support, learning, and technology together in one powerful platform.
               </p>
-            </motion.div>
+            </div>
 
             {/* Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex flex-col sm:flex-row gap-4"
-            >
+            <div className="hero-button-content flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
                 className="gap-3 bg-white text-[#0B1221] hover:bg-gray-100 font-semibold px-8 py-6 text-base"
@@ -66,7 +56,7 @@ function Hero() {
                 Download the App
                 <MoveRight className="w-5 h-5" />
               </Button>
-            </motion.div>
+            </div>
           </div>
 
           {/* Right Column - 3D Icons */}
@@ -74,35 +64,23 @@ function Hero() {
             <div className="relative w-full h-full">
               {/* Central advocate figure representation */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8, delay: 0.3 }}
-                  className="relative z-10"
-                >
+                <div className="hero-center-icon relative z-10">
                   <div className="w-48 h-48 rounded-full bg-gradient-to-br from-blue-500/20 to-cyan-500/20 backdrop-blur-xl border border-blue-500/30 flex items-center justify-center">
                     <Scale className="w-24 h-24 text-[#2D6CF6]" strokeWidth={1.5} />
                   </div>
-                </motion.div>
+                </div>
               </div>
 
               {/* Floating justice-themed icons */}
               {justiceIcons.map(({ Icon, delay, x, y }, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{
-                    duration: 0.6,
-                    delay: delay + 0.5,
-                    type: "spring",
-                    stiffness: 100,
-                  }}
-                  className="absolute"
+                  className="hero-floating-icon absolute"
                   style={{
                     left: `calc(50% + ${x}px)`,
                     top: `calc(50% + ${y}px)`,
                     transform: "translate(-50%, -50%)",
+                    animationDelay: `${delay * 0.1}s`,
                   }}
                 >
                   <motion.div
@@ -124,7 +102,7 @@ function Hero() {
                     {/* Glow effect */}
                     <div className="absolute inset-0 rounded-xl bg-blue-500/20 blur-xl -z-10"></div>
                   </motion.div>
-                </motion.div>
+                </div>
               ))}
 
               {/* Additional floating particles/glow effects */}
@@ -155,31 +133,21 @@ function Hero() {
           <div className="lg:hidden flex items-center justify-center py-12">
             <div className="relative w-full max-w-md h-64">
               <div className="absolute inset-0 flex items-center justify-center">
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8 }}
-                  className="relative z-10"
-                >
+                <div className="hero-center-icon-mobile relative z-10">
                   <div className="w-32 h-32 rounded-full bg-gradient-to-br from-blue-500/20 to-cyan-500/20 backdrop-blur-xl border border-blue-500/30 flex items-center justify-center">
                     <Scale className="w-16 h-16 text-[#2D6CF6]" strokeWidth={1.5} />
                   </div>
-                </motion.div>
+                </div>
               </div>
               {justiceIcons.slice(0, 4).map(({ Icon, delay, x, y }, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{
-                    duration: 0.6,
-                    delay: delay + 0.5,
-                  }}
-                  className="absolute"
+                  className="hero-floating-icon-mobile absolute"
                   style={{
                     left: `calc(50% + ${x * 0.5}px)`,
                     top: `calc(50% + ${y * 0.5}px)`,
                     transform: "translate(-50%, -50%)",
+                    animationDelay: `${delay * 0.1}s`,
                   }}
                 >
                   <motion.div
@@ -195,7 +163,7 @@ function Hero() {
                   >
                     <Icon className="w-6 h-6 text-[#2D6CF6]" strokeWidth={1.5} />
                   </motion.div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>

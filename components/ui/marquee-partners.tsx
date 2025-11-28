@@ -1,14 +1,15 @@
 "use client";
 
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 const logos = [
-  { name: "Supreme Court of India", src: "/partners/supreme-court.png" },
-  { name: "Bombay High Court", src: "/partners/bombay-high-court.png" },
-  { name: "Delhi Courts", src: "/partners/delhi-courts.png" },
-  { name: "National Law Universities", src: "/partners/law-universities.png" },
-  { name: "Corporate Legal", src: "/partners/corporate-legal.png" },
-  { name: "Policy Think Tanks", src: "/partners/policy-thinktank.png" },
+  { name: "Corporate Legal", src: "/partners/corporate-legal.jpeg" },
+  { name: "Policy Think Tanks", src: "/partners/policy-thinktank.jpeg" },
+  { name: "United Nations", src: "/partners/united-nations.jpeg" },
+  { name: "International Bar Council", src: "/partners/international-bar-council.jpeg" },
+  { name: "Federation of Indian Corporate Lawyer", src: "/partners/ficl.jpeg" },
+  { name: "Woxen University", src: "/partners/woxen-university.jpeg" },
 ];
 
 export function MarqueePartners({ className }: { className?: string }) {
@@ -27,16 +28,27 @@ export function MarqueePartners({ className }: { className?: string }) {
             key={`${logo.name}-${index}`}
             className="flex min-w-[120px] flex-col items-center gap-2 text-xs tracking-wide text-gray-300"
           >
-            <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-full overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:scale-105">
-              <img
+            <div className="relative w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-full overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:scale-105">
+              <Image
                 src={logo.src}
                 alt={logo.name}
-                className="h-full w-full object-cover filter grayscale"
+                fill
+                sizes="(max-width: 640px) 56px, (max-width: 1024px) 64px, 80px"
+                className="object-cover object-center"
                 draggable={false}
+                loading="lazy"
+                quality={75}
               />
             </div>
-            <span className="text-center text-[11px] uppercase tracking-[0.2em] text-gray-400">
-              {logo.name}
+            <span className="text-center text-[11px] uppercase tracking-[0.2em] text-gray-400 leading-tight">
+              {logo.name === "Federation of Indian Corporate Lawyer" ? (
+                <span className="block">
+                  <span className="block">FEDERATION OF INDIAN</span>
+                  <span className="block">CORPORATE LAWYER</span>
+                </span>
+              ) : (
+                logo.name
+              )}
             </span>
           </div>
         ))}

@@ -181,16 +181,6 @@ export default function AboutPage() {
         />
 
         <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center text-center">
-          <motion.p
-            initial="initial"
-            animate="animate"
-            variants={fadeInUp}
-            transition={transitionFast}
-            className="mb-8 text-xs uppercase tracking-[0.4em] text-teal-200/70"
-          >
-            Content Block / Headline Centered
-          </motion.p>
-          
           <motion.h1
             initial="initial"
             animate="animate"
@@ -198,7 +188,7 @@ export default function AboutPage() {
             transition={{ ...transitionMedium, delay: 0.1 }}
             className="text-5xl font-bold leading-[1.1] tracking-tight text-white sm:text-6xl lg:text-7xl"
           >
-            India's Centralised Legal-Tech Ecosystem
+            Centralised Legal-Tech Ecosystem
           </motion.h1>
 
           {/* Neon Accent Line */}
@@ -216,8 +206,8 @@ export default function AboutPage() {
             transition={{ ...transitionMedium, delay: 0.2 }}
             className="mt-10 max-w-3xl text-lg leading-relaxed text-white/80 sm:text-xl"
           >
-            CLNS unifies clients, students, and advocates into a single digital operating system—making legal access
-            simple, fast, and transparent for every Indian.
+            CLNS unifies clients, students, and advocates into a single digital operating system making legal access
+            simple, fast, and transparent for everyone.
           </motion.p>
         </div>
       </section>
@@ -262,7 +252,7 @@ export default function AboutPage() {
               transition={{ ...transitionFast, delay: 0.2 }}
               className="text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl"
             >
-              A New Era of Legal Access in India
+              A New Era of Legal Access
             </motion.h2>
 
             <div className="space-y-5 text-base leading-relaxed text-white/80">
@@ -273,7 +263,7 @@ export default function AboutPage() {
                 variants={fadeInUp}
                 transition={{ ...transitionFast, delay: 0.3 }}
               >
-                CLNS is India's first unified{" "}
+                CLNS is the first unified{" "}
                 <span className="text-teal-300 font-semibold">legal-tech ecosystem</span> connecting clients, students, and advocates through a single digital platform that brings legal help, learning, and case management into one modern workflow.
               </motion.p>
               
@@ -285,7 +275,7 @@ export default function AboutPage() {
                 transition={{ ...transitionFast, delay: 0.4 }}
               >
                 We eliminate the fear, confusion, and high cost of legal processes by blending technology with{" "}
-                <span className="text-teal-300 font-semibold">verified advocates</span> and real-world learning—making legal access transparent, fast, and empowering for every Indian.
+                <span className="text-teal-300 font-semibold">verified advocates</span> and real-world learning making legal access transparent, fast, and empowering for everyone.
               </motion.p>
               
               <motion.p
@@ -296,7 +286,7 @@ export default function AboutPage() {
                 transition={{ ...transitionFast, delay: 0.5 }}
               >
                 From{" "}
-                <span className="text-teal-300 font-semibold">₹1 consultations</span> to live case exposure and digital practice tools, CLNS is building the future of India's legal support system—accessible to anyone, anywhere.
+                <span className="text-teal-300 font-semibold">₹1 consultations</span> to live case exposure and digital practice tools, CLNS is building the future of the legal support system accessible to anyone, anywhere.
               </motion.p>
             </div>
           </motion.div>
@@ -351,7 +341,7 @@ export default function AboutPage() {
                     <p className="mt-2 text-white/70">Platform Availability</p>
                   </div>
                   <div className="rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur">
-                    <p className="text-3xl font-bold text-white">99%</p>
+                    <p className="text-3xl font-bold text-white">100%</p>
                     <p className="mt-2 text-white/70">Case Transparency</p>
                   </div>
                 </div>
@@ -361,67 +351,24 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 3. METRICS SECTION - Optimized */}
-      <section className="relative px-6 py-32">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#010308] via-[#030a15] to-[#010205]" />
-        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center text-center">
-          <motion.p
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            transition={transitionFast}
-            className="text-xs uppercase tracking-[0.4em] text-teal-200/80"
-          >
-            Metrics
-          </motion.p>
-          <motion.h2
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            transition={{ ...transitionFast, delay: 0.1 }}
-            className="mt-4 text-4xl font-bold text-white sm:text-5xl"
-          >
-            Our Impact Across India
-          </motion.h2>
-          <motion.p
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            transition={{ ...transitionFast, delay: 0.2 }}
-            className="mt-6 max-w-2xl text-lg text-white/70"
-          >
-            Rapid adoption across clients, students, and advocates.
-          </motion.p>
-          
-          <div className="mt-16 grid w-full gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {stats.map((stat, index) => (
-              <StatCard key={stat.label} stat={stat} index={index} />
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* 4. PLATFORM PERSONA BLOCKS - Optimized */}
-      <section className="relative px-6 py-32">
+      <section className="relative px-4 py-32 sm:px-6 lg:px-8">
         <div className="absolute inset-0 bg-gradient-to-r from-[#040c18] via-[#030914] to-[#010205]" />
-        <div className="relative z-10 mx-auto max-w-7xl">
+        <div className="relative z-10 mx-auto max-w-[1600px]">
           <motion.div
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
             variants={fadeInUp}
             transition={transitionMedium}
-            className="text-center"
+            className="text-center mb-16 sm:mb-20"
           >
-            <p className="text-xs uppercase tracking-[0.4em] text-teal-200/80">Platform</p>
-            <h2 className="mt-4 text-4xl font-bold text-white sm:text-5xl">The CLNS Ecosystem</h2>
-            <p className="mt-6 text-lg text-white/75">One platform. Five personas. Endless possibilities.</p>
+            <h2 className="text-4xl font-bold text-white sm:text-5xl lg:text-6xl">The CLNS Ecosystem</h2>
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-white/75 max-w-2xl mx-auto">One platform. Five personas. Endless possibilities.</p>
           </motion.div>
           
-          <div className="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 sm:gap-8 lg:gap-6 xl:gap-8 items-stretch">
             {personas.map((persona, index) => (
               <PersonaCard key={persona.title} persona={persona} index={index} />
             ))}
@@ -442,10 +389,10 @@ export default function AboutPage() {
           className="relative z-10 mx-auto flex max-w-5xl flex-col items-center rounded-[40px] border border-white/10 bg-black/30 p-16 text-center shadow-[0_50px_150px_rgba(0,0,0,0.6)] backdrop-blur-xl transform-gpu"
         >
           <h2 className="text-4xl font-bold leading-tight text-transparent sm:text-5xl bg-gradient-to-r from-teal-300 via-sky-400 to-blue-400 bg-clip-text">
-            Legal access should be fast, transparent, and affordable for every Indian.
+            Legal access should be fast, transparent, and affordable for everyone.
           </h2>
           <p className="mt-8 text-xl text-white/80">
-            That's why CLNS exists—to redefine how India interacts with the law.
+            That's why CLNS exists to redefine how people interact with the law.
           </p>
         </motion.div>
       </section>
@@ -464,7 +411,7 @@ export default function AboutPage() {
         >
           <h2 className="text-4xl font-bold text-white sm:text-5xl">Access CLNS Anywhere</h2>
           <p className="mt-6 text-lg text-white/75">
-            Manage cases, connect with advocates, and track progress—all in one app.
+            Manage cases, connect with advocates, and track progress all in one app.
           </p>
           <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:justify-center">
             <motion.a
@@ -510,8 +457,6 @@ export default function AboutPage() {
           src="/images/lady-justice-footer.jpg"
           alt="Lady Justice"
           fill
-          width={1920}
-          height={460}
           className="object-cover object-center transform-gpu"
           priority={false}
           sizes="100vw"
@@ -582,7 +527,7 @@ function PersonaCard({
       transition={{ ...transitionFast, delay: index * 0.08 }}
       whileHover={{ y: -8, scale: 1.02 }}
       style={{ willChange: "transform, opacity", backfaceVisibility: "hidden" }}
-      className="group relative rounded-3xl border border-white/10 bg-white/5 p-10 shadow-[0_40px_120px_rgba(0,0,0,0.5)] backdrop-blur-xl transition-all duration-300 hover:border-teal-400/40 hover:shadow-[0_60px_150px_rgba(34,211,238,0.3)] transform-gpu"
+      className="group relative flex flex-col h-full rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8 lg:p-6 xl:p-8 shadow-[0_40px_120px_rgba(0,0,0,0.5)] backdrop-blur-xl transition-all duration-300 hover:border-teal-400/40 hover:shadow-[0_60px_150px_rgba(34,211,238,0.3)] transform-gpu"
     >
       {/* Moving Gradient Background - Optimized */}
       <motion.div
@@ -595,27 +540,29 @@ function PersonaCard({
           ease: "linear",
         }}
         style={{ willChange: "background-position" }}
-        className={`absolute inset-0 bg-gradient-to-br ${persona.gradient} bg-[length:200%_200%] opacity-70 transform-gpu`}
+        className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${persona.gradient} bg-[length:200%_200%] opacity-70 transform-gpu`}
       />
 
       {/* Gradient Border */}
       <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${persona.borderGradient} opacity-0 transition-opacity group-hover:opacity-100`} />
 
       {/* Background Particles */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.02)_1px,transparent_1px),radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[length:60px_60px]" />
+      <div className="absolute inset-0 rounded-3xl bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.02)_1px,transparent_1px),radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[length:60px_60px]" />
 
       {/* Ambient Glow */}
-      <div className="absolute -inset-4 bg-gradient-to-br from-teal-500/10 via-transparent to-blue-500/10 blur-2xl opacity-0 transition-opacity group-hover:opacity-100" />
+      <div className="absolute -inset-4 bg-gradient-to-br from-teal-500/10 via-transparent to-blue-500/10 blur-2xl opacity-0 transition-opacity group-hover:opacity-100 rounded-3xl" />
 
-      <div className="relative z-10">
-        <div className="mb-6 flex items-center gap-4">
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur">
-            <Icon className="h-6 w-6 text-teal-300" />
+      <div className="relative z-10 flex flex-col h-full">
+        {/* Header Section */}
+        <div className="mb-6 flex items-center gap-3 sm:gap-4">
+          <div className="flex-shrink-0 rounded-2xl border border-white/10 bg-white/5 p-2.5 sm:p-3 backdrop-blur transition-all group-hover:border-teal-400/30 group-hover:bg-teal-500/10">
+            <Icon className="h-5 w-5 sm:h-6 sm:w-6 text-teal-300" />
           </div>
-          <h3 className="text-2xl font-bold text-white">{persona.title}</h3>
+          <h3 className="text-xl sm:text-2xl font-bold text-white leading-tight">{persona.title}</h3>
         </div>
         
-        <div className="space-y-4">
+        {/* Features List */}
+        <div className="flex-1 space-y-3 sm:space-y-4">
           {persona.highlights.map((item, idx) => (
             <motion.div
               key={item}
@@ -625,7 +572,7 @@ function PersonaCard({
               variants={slideInLeft}
               transition={{ ...transitionFast, delay: index * 0.08 + idx * 0.03 }}
               style={{ willChange: "transform, opacity" }}
-              className="flex items-center gap-3 rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-sm backdrop-blur transform-gpu"
+              className="flex items-start gap-3 rounded-xl border border-white/10 bg-black/20 px-3.5 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm backdrop-blur transform-gpu transition-all group-hover:border-white/20"
             >
               <motion.span
                 animate={{
@@ -639,9 +586,9 @@ function PersonaCard({
                   delay: idx * 0.15,
                 }}
                 style={{ willChange: "transform, opacity" }}
-                className="h-2 w-2 rounded-full bg-teal-300 shadow-[0_0_8px_rgba(34,211,238,0.6)] transform-gpu"
+                className="flex-shrink-0 mt-0.5 h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-teal-300 shadow-[0_0_8px_rgba(34,211,238,0.6)] transform-gpu"
               />
-              <span className="text-white/85">{item}</span>
+              <span className="text-white/85 leading-relaxed">{item}</span>
             </motion.div>
           ))}
         </div>

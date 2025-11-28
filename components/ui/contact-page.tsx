@@ -13,12 +13,42 @@ import {
   Twitter,
   Linkedin,
   Instagram,
+  Globe,
 } from "lucide-react";
 import { Button, ButtonProps } from "@/components/ui/button";
 
-const APP_EMAIL = "support@clns.in";
+const APP_EMAIL = "office@clns.in";
 const APP_PHONE = "8465958825";
 const APP_PHONE_2 = "8465958825";
+
+// Hyderabad - CLNS Offices
+const hyderabadOffices = [
+  { city: "Uppal Office", address: "Plot No. 93, H.No. 2-1-33/1/A, Saraswathi Colony, Uppal, Hyderabad – 500039, Telangana, India.", phone: "8465958825" },
+  { city: "L. B. Nagar Office", address: "3rd Floor, Opposite Pavan Sai Hospital, Rajivgandhi Nagar, Bharat Nagar, L. B. Nagar, Hyderabad – 500068, Telangana, India.", phone: "8465958825" },
+];
+
+// BPR Law Chambers - Delhi Offices
+const delhiOffices = [
+  { city: "Hari Nagar Ashram Office", address: "235, Ground Floor, Hari Nagar Ashram, South East Delhi – 110014, Delhi, India.", phone: "8465958825" },
+  { city: "South Extension Part-2 Office", address: "A-31, Basement, South Extension Part-2, Delhi – 110049, Delhi, India.", phone: "8465958825" },
+];
+
+// BPR Law Chambers - Uttar Pradesh Offices
+const upOffices = [
+  { city: "Prayagraj Office", address: "313, Baxi Khurd, Daraganj, Prayagraj, Uttar Pradesh – 211006, India.", phone: "8465958825" },
+  { city: "Lucknow Office", address: "Bhagirathi Enclave, Avadh Vihar Yojna, Shaheed Path, Lucknow, Uttar Pradesh – 226002, India.", phone: "8465958825" },
+];
+
+// BPR Law Chambers - Rajasthan Office
+const rajasthanOffices = [
+  { city: "Kota Office", address: "C-5, Milat Nagar, Borkhera, Kota, Rajasthan – 324002, India.", phone: "8465958825" },
+];
+
+// CLNS - Regional Presence
+const regionalPresence = [
+  { region: "Andhra Pradesh Presence", description: "CLNS provides legal network solutions and associated services across all major cities and districts in Andhra Pradesh." },
+  { region: "Maharashtra Presence", description: "CLNS provides legal network solutions and associated services across all major cities and districts in Maharashtra." },
+];
 
 export function ContactPage() {
   const socialLinks = [
@@ -49,7 +79,6 @@ export function ContactPage() {
       <div className="mx-auto h-full max-w-6xl">
         {/* HEADER */}
         <div className="flex flex-col px-4 pt-28 pb-16 md:px-6">
-          <p className="mb-4 text-xs uppercase tracking-[0.4em] text-teal-200/70">Contact</p>
           <h1 className="text-4xl font-bold text-white md:text-5xl lg:text-6xl">
             Contact CLNS
           </h1>
@@ -74,12 +103,6 @@ export function ContactPage() {
             </div>
           </Box>
 
-          <Box icon={MapPin} title="Office" description="Visit our CLNS Headquarters.">
-            <span className="font-mono text-base font-medium text-white/90 leading-relaxed">
-              T-Hub<br />
-              Hyderabad, Telangana
-            </span>
-          </Box>
 
           <Box icon={Phone} title="Phone" description="Available Mon–Fri, 9 AM–7 PM.">
             <div className="space-y-3">
@@ -104,7 +127,21 @@ export function ContactPage() {
               </div>
             </div>
           </Box>
+
+          <Box icon={MapPin} title="Office" description="Visit our main branch.">
+            <div className="max-h-32 overflow-y-auto">
+              <p className="text-sm font-semibold text-teal-300">Main Branch: Hyderabad (T-Hub)</p>
+              <p className="mt-2 text-xs leading-relaxed text-white/70">
+                Plot No 1/C, Sy No 83/1, Raidurgam, Panmaktha, Hyderabad Knowledge City, Serilingampally, Hyderabad, Telangana 500081, India.
+              </p>
+            </div>
+          </Box>
         </div>
+
+        <BorderSeparator />
+
+        {/* OFFICE LOCATIONS CARDS */}
+        <ContactLocationsSection />
 
         <BorderSeparator />
 
@@ -115,13 +152,13 @@ export function ContactPage() {
             <h2 className="text-2xl font-semibold text-white">Support Categories</h2>
             <ul className="grid gap-6 text-sm md:grid-cols-3">
               <li className="rounded-lg border border-white/10 bg-white/5 p-4 text-white/70 backdrop-blur-xl">
-                <span className="font-semibold text-teal-300">Client Support</span> — Case tracking, consultations, access issues.
+                <span className="font-semibold text-teal-300">Client Support</span> Case tracking, consultations, access issues.
               </li>
               <li className="rounded-lg border border-white/10 bg-white/5 p-4 text-white/70 backdrop-blur-xl">
-                <span className="font-semibold text-teal-300">Student Support</span> — Internships, dashboard help, learning paths.
+                <span className="font-semibold text-teal-300">Student Support</span> Internships, dashboard help, learning paths.
               </li>
               <li className="rounded-lg border border-white/10 bg-white/5 p-4 text-white/70 backdrop-blur-xl">
-                <span className="font-semibold text-teal-300">Advocate Support</span> — Document vault, billing, assignments.
+                <span className="font-semibold text-teal-300">Advocate Support</span> Document vault, billing, assignments.
               </li>
             </ul>
           </div>
@@ -242,6 +279,183 @@ function Box({ title, description, className, children, ...props }: ContactBox) 
 }
 
 type CopyButtonProps = ButtonProps & { test: string };
+
+const officeTableData = [
+  { city: "Hyderabad (Uppal)", address: "Plot No. 93, H.No. 2-1-33/1/A, Saraswathi Colony, Uppal, Hyderabad – 500039, Telangana, India." },
+  { city: "Hyderabad (L. B. Nagar)", address: "3rd Floor, Opposite Pavan Sai Hospital, Rajivgandhi Nagar, Bharat Nagar, L. B. Nagar, Hyderabad – 500068, Telangana, India." },
+  { city: "Hyderabad (Chaitanyapuri)", address: "Above Mahesh Bank Beside Bhagyasree Function Hall Chaitanyapuri, Hyderabad, Telangana, India." },
+  { city: "Hyderabad (T-Hub)", address: "Plot No 1/C, Sy No 83/1, Raidurgam, Panmaktha, Hyderabad Knowledge City, Serilingampally, Hyderabad, Telangana 500081, India." },
+  { city: "Delhi (Hari Nagar Ashram)", address: "235, Ground Floor, Hari Nagar Ashram, South East Delhi – 110014, Delhi, India." },
+  { city: "Delhi (South Extension Part-2)", address: "A-31, Basement, South Extension Part-2, Delhi – 110049, Delhi, India." },
+  { city: "Prayagraj", address: "313, Baxi Khurd, Daraganj, Prayagraj, Uttar Pradesh – 211006, India." },
+  { city: "Lucknow", address: "Bhagirathi Enclave, Avadh Vihar Yojna, Shaheed Path, Lucknow, Uttar Pradesh – 226002, India" },
+  { city: "Kota", address: "C-5, Milat Nagar, Borkhera, Kota, Rajasthan – 324002, India." },
+  { city: "Andhra Pradesh", address: "Service coverage across all major cities" },
+  { city: "Maharashtra", address: "Service coverage across all major cities" },
+];
+
+export function ContactLocationsSection() {
+  return (
+    <div className="px-6 py-12">
+      {/* Header */}
+      <div className="mb-8 flex items-center gap-3">
+        <MapPin className="h-6 w-6 text-teal-400" />
+        <h2 className="text-2xl font-semibold text-white">Our Offices & Presence</h2>
+      </div>
+
+      {/* Table Container */}
+      <div className="w-full overflow-x-auto rounded-xl border border-teal-500/20 bg-gradient-to-br from-slate-900 to-slate-800 shadow-lg">
+        <table className="w-full min-w-[600px] table-fixed">
+          <thead>
+            <tr className="border-b border-teal-500/30 bg-teal-500/10">
+              <th className="w-[30%] px-6 py-4 text-left text-sm font-bold uppercase tracking-wider text-teal-400">
+                City
+              </th>
+              <th className="w-[70%] px-6 py-4 text-left text-sm font-bold uppercase tracking-wider text-teal-400">
+                Address
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {officeTableData.map((row, index) => (
+              <tr
+                key={index}
+                className={cn(
+                  "border-b border-teal-500/10 transition-colors duration-200 hover:bg-teal-500/5",
+                  index % 2 === 0 ? "bg-transparent" : "bg-white/[0.02]"
+                )}
+              >
+                <td className="px-6 py-4 text-sm font-semibold text-teal-300">
+                  {row.city}
+                </td>
+                <td className="px-6 py-4 text-sm leading-relaxed text-gray-400">
+                  {row.address}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+export default ContactLocationsSection;
+
+function OfficeCard({ office }: { office: { city: string; address: string; phone: string } }) {
+  const [copied, setCopied] = React.useState(false);
+
+  const handleCopyAddress = async () => {
+    await navigator.clipboard.writeText(office.address);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
+
+  return (
+    <div className="group cursor-default overflow-hidden rounded-2xl border border-teal-500/20 bg-gradient-to-br from-slate-900 to-slate-800 shadow-md transition-all duration-300 hover:cursor-pointer hover:border-teal-400/50 hover:shadow-[0_0_25px_rgba(0,255,200,0.2)] active:cursor-grabbing">
+      {/* Header */}
+      <div className="flex items-center gap-3 border-b border-teal-500/20 bg-teal-500/10 px-6 py-4">
+        <MapPin className="h-5 w-5 text-teal-400" />
+        <div>
+          <p className="text-xs uppercase tracking-widest text-teal-300/70">Visit Us</p>
+          <h3 className="text-lg font-bold text-white transition-colors duration-300 group-hover:text-teal-300">
+            {office.city}
+          </h3>
+        </div>
+      </div>
+
+      {/* Address */}
+      <div className="px-6 py-6">
+        <p className="text-sm leading-relaxed text-gray-400 transition-colors duration-300 group-hover:text-gray-300">
+          {office.address}
+        </p>
+      </div>
+
+      {/* Actions */}
+      <div className="flex items-center gap-3 border-t border-teal-500/20 bg-slate-900/50 px-6 py-4">
+        <a
+          href={`tel:${office.phone}`}
+          className="flex items-center gap-2 cursor-pointer rounded-lg bg-teal-500 px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:bg-teal-400 hover:shadow-[0_0_15px_rgba(0,255,200,0.5)] active:scale-95 active:cursor-grabbing"
+        >
+          <Phone className="h-4 w-4" />
+          Call
+        </a>
+        <button
+          onClick={handleCopyAddress}
+          className="flex items-center gap-2 cursor-pointer rounded-lg border border-teal-400 px-4 py-2 text-sm font-semibold text-teal-400 transition-all duration-300 hover:bg-teal-400/20 hover:text-teal-300 active:scale-95 active:cursor-grabbing"
+        >
+          {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+          {copied ? "Copied!" : "Copy Address"}
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function RegionCard({ region }: { region: { region: string; description: string } }) {
+  return (
+    <div className="group cursor-default overflow-hidden rounded-2xl border border-purple-500/20 bg-gradient-to-br from-slate-900 to-purple-950/30 shadow-md transition-all duration-300 hover:cursor-pointer hover:border-purple-400/50 hover:shadow-[0_0_25px_rgba(168,85,247,0.2)] active:cursor-grabbing">
+      {/* Header */}
+      <div className="flex items-center gap-3 border-b border-purple-500/20 bg-purple-500/10 px-6 py-4">
+        <Globe className="h-5 w-5 text-purple-400" />
+        <div>
+          <p className="text-xs uppercase tracking-widest text-purple-300/70">Service Region</p>
+          <h3 className="text-lg font-bold text-white transition-colors duration-300 group-hover:text-purple-300">
+            {region.region}
+          </h3>
+        </div>
+      </div>
+
+      {/* Description */}
+      <div className="px-6 py-6">
+        <p className="text-sm leading-relaxed text-gray-400 transition-colors duration-300 group-hover:text-gray-300">
+          {region.description}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function LocationRow({ office }: { office: { city: string; address: string; phone: string } }) {
+  const [copied, setCopied] = React.useState(false);
+
+  const handleCopyAddress = async () => {
+    await navigator.clipboard.writeText(`${office.address}, Phone: ${office.phone}`);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
+
+  return (
+    <div className="group grid grid-cols-3 gap-6 border-b border-teal-500/20 px-6 py-4 transition-all duration-300 hover:cursor-pointer hover:bg-slate-800/50 active:cursor-grabbing">
+      {/* Column 1: City Name */}
+      <div className="cursor-default font-bold text-teal-400 transition-colors duration-300 group-hover:cursor-pointer group-hover:text-teal-300">
+        {office.city}
+      </div>
+
+      {/* Column 2: Address */}
+      <div className="cursor-default text-sm leading-relaxed text-gray-400 transition-colors duration-300 group-hover:cursor-pointer group-hover:text-gray-300">
+        {office.address}
+      </div>
+
+      {/* Column 3: Phone/Action */}
+      <div className="flex items-center gap-2">
+        <a
+          href={`tel:${office.phone}`}
+          className="cursor-pointer rounded-lg bg-teal-500 px-4 py-2 font-bold text-white transition-all duration-300 hover:cursor-pointer hover:bg-teal-400 hover:shadow-[0_0_15px_rgba(0,255,200,0.5)] active:scale-95 active:cursor-grabbing"
+        >
+          Call
+        </a>
+
+        <button
+          onClick={handleCopyAddress}
+          className="cursor-pointer rounded-lg border border-teal-400 px-4 py-2 font-bold text-teal-400 transition-all duration-300 hover:cursor-pointer hover:bg-teal-400/20 hover:text-teal-300 active:scale-95 active:cursor-grabbing"
+        >
+          {copied ? "Copied!" : "Copy"}
+        </button>
+      </div>
+    </div>
+  );
+}
 
 function CopyButton({
   className,

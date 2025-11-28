@@ -32,7 +32,7 @@ const personaData: Record<
       },
       {
         title: "Personalized Dashboard",
-        description: "One space for briefs, payments, and outcomes—securely synced across your devices.",
+        description: "One space for briefs, payments, and outcomes securely synced across your devices.",
       },
     ],
   },

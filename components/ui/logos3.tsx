@@ -29,7 +29,7 @@ const Logos3 = ({
       : [
           {
             id: "logo-1",
-            description: "Supreme Court of India",
+            description: "Supreme Court",
             image: "https://images.unsplash.com/photo-1524230568792-281cb63f202a?w=600&auto=format&fit=crop",
             className: "h-16 w-16 rounded-full object-cover",
           },
@@ -68,7 +68,6 @@ const Logos3 = ({
   return (
     <section className={cn("py-24", className)}>
       <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-        <p className="mb-3 text-xs uppercase tracking-[0.4em] text-white/50">Partners</p>
         <h2 className="text-2xl font-semibold text-white lg:text-4xl">{heading}</h2>
       </div>
       <div className="pt-12">

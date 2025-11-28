@@ -44,7 +44,7 @@ export function CTAContactSection() {
             Your Legal Journey Starts Here.
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-white/70 sm:text-xl">
-            Get support, guidance, and professional legal solutions—all through India's centralised legal-tech
+            Get support, guidance, and professional legal solutions all through the centralised legal-tech
             ecosystem.
           </p>
         </motion.div>
