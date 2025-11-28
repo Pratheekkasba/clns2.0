@@ -773,6 +773,42 @@ export default function ServicesPage() {
   );
 }
 
+function RoadmapBanner({
+  label,
+  src,
+  alt,
+}: {
+  label: string;
+  src: string;
+  alt: string;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="mb-12"
+    >
+      <div className="relative h-[240px] sm:h-[300px] lg:h-[360px] overflow-hidden rounded-[36px] border border-white/10 bg-white/5 shadow-[0_40px_120px_rgba(0,0,0,0.55)] backdrop-blur-xl">
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 85vw, 1200px"
+          className="object-cover"
+          loading="lazy"
+          quality={85}
+          priority={false}
+        />
+
+        <div className="absolute left-6 top-6 rounded-full border border-white/20 bg-black/40 px-6 py-2 text-sm font-semibold uppercase tracking-[0.3em] text-white/80 backdrop-blur">
+          {label}
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 function ServiceFeatureCard({
   service,
   index,
