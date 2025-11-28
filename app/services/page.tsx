@@ -470,6 +470,12 @@ export default function ServicesPage() {
             <h3 className="mb-2 text-center text-xs uppercase tracking-[0.4em] text-teal-200/80">How It Works</h3>
             <ProcessFlow processes={clientProcess} columns={4} />
           </motion.div>
+
+          <RoadmapBanner
+            label="Client Journey Roadmap"
+            src="/roadmaps/clients-roadmap.jpeg"
+            alt="CLNS roadmap for clients"
+          />
         </div>
       </section>
 
@@ -507,6 +513,12 @@ export default function ServicesPage() {
             <h3 className="mb-2 text-center text-xs uppercase tracking-[0.4em] text-teal-200/80">How It Works</h3>
             <StudentJourneyStrip processes={studentProcess} />
           </motion.div>
+
+          <RoadmapBanner
+            label="Student Journey Roadmap"
+            src="/roadmaps/students-roadmap.jpeg"
+            alt="CLNS roadmap for students"
+          />
         </div>
       </section>
 
@@ -546,6 +558,12 @@ export default function ServicesPage() {
             <h3 className="mb-2 text-center text-xs uppercase tracking-[0.4em] text-teal-200/80">How It Works</h3>
             <ProcessFlow processes={advocateProcess} />
           </motion.div>
+
+          <RoadmapBanner
+            label="Advocates Roadmap"
+            src="/roadmaps/advocates-roadmap.jpeg"
+            alt="CLNS roadmap for advocates"
+          />
         </div>
       </section>
 
@@ -583,6 +601,12 @@ export default function ServicesPage() {
             <h3 className="mb-2 text-center text-xs uppercase tracking-[0.4em] text-teal-200/80">How It Works</h3>
             <ProcessFlow processes={startupProcess} columns={4} />
           </motion.div>
+
+          <RoadmapBanner
+            label="Startup Roadmap"
+            src="/roadmaps/startups-msme-roadmap.jpeg"
+            alt="CLNS roadmap for startups"
+          />
         </div>
       </section>
 
@@ -620,6 +644,12 @@ export default function ServicesPage() {
             <h3 className="mb-2 text-center text-xs uppercase tracking-[0.4em] text-teal-200/80">How It Works</h3>
             <ProcessFlow processes={msmeProcess} columns={4} />
           </motion.div>
+
+          <RoadmapBanner
+            label="MSME Roadmap"
+            src="/roadmaps/startups-msme-roadmap.jpeg"
+            alt="CLNS roadmap for MSME businesses"
+          />
         </div>
       </section>
 
